@@ -1,2 +1,2 @@
 # MLOps-learn
-MLOps 교육
+MLOps 수업 들으면서 발생한 
