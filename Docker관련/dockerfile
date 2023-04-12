@@ -1,0 +1,21 @@
+# dockerfile 만들기
+# 베이스 : python 3.9
+# label : version, description
+# run : apt-get update, apt-get upgrade -y
+# run : apt-get install python3-pip
+# workdir : /data/app 
+
+FROM python:3.9
+
+LABEL version=1.0.0
+LABEL description=test
+
+RUN apt-get update 
+RUN apt-get upgrade -y
+RUN apt-get install python3-pip -y
+
+WORKDIR /data/app
+
+COPY requirements.txt ./requirements.txt
+
+RUN pip install -r requirements.txt
