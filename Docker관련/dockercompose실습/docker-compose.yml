@@ -1,0 +1,30 @@
+version: '3.9'
+
+services:
+  # host:
+  #   image: jupyter/datascience-notebook:latest
+  #   ports:
+  #     - 8888:8888
+  #   volumes:
+  #     - /work
+  #   build: 
+  #     context: /mnt/c/Users/user/Desktop/2기_Woochan/git/MLOps-learn/Docker관련/dockercompose실습
+
+  jupyter-ds:
+    image: jupyter/datascience-notebook:latest
+    ports:
+      - 8890:8890
+    volumes:
+      - ./pj_ds:/app/project-ds
+    build: 
+      context: /mnt/c/Users/user/Desktop/2기_Woochan/git/MLOps-learn/Docker관련/dockercompose실습/ds/
+    command: jupyter notebook --allow-root --no-browser --port 8890
+  jupyter-enginner:
+    image: jupyter/datascience-notebook:latest
+    ports:
+      - 8899:8899
+    volumes:
+      - ./pj_eg:/app/project-engineer
+    build: 
+      context: /mnt/c/Users/user/Desktop/2기_Woochan/git/MLOps-learn/Docker관련/dockercompose실습/engineer
+    command: jupyter notebook --allow-root --no-browser --port 8899
